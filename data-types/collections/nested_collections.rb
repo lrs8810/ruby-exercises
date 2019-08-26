@@ -13,50 +13,46 @@ class NestesdCollectionsTest < Minitest::Test
   end
 
   def test_2
-    skip
     coordinates = [[2,5],[87,2],[56,39],[3,46]]
     # Using the coordinates variable defined above
     # Retrive the value 39
-    thirty_nine = _________
+    thirty_nine = coordinates[2][1]
     assert_equal 39, thirty_nine
   end
 
   def test_3
-    skip
     coordinates = [[2,5],[87,2],[56,39],[3,46]]
     # Using the coordinates variable defined above
     # set the last coordinates to [6, 55]
-    _________
+    coordinates.pop
+    coordinates << [6,55]
 
     expected = [[2,5],[87,2],[56,39],[6,55]]
     assert_equal expected, coordinates
   end
 
   def test_4
-    skip
     coordinates = [[2,5],[87,2],[56,39],[3,46]]
     # Using the coordinates variable defined above
     # set the second element of the last coordinates
     # to 0
-    ________
+    coordinates[-1][1] = 0
 
     expected = [[2,5],[87,2],[56,39],[3, 0]]
     assert_equal expected, coordinates
   end
 
   def test_5
-    skip
     coordinates = [[2,5],[87,2],[56,39],[3,46]]
     # Using the coordinates variable defined above
     # add the coordinate [4, 14]
-    _________
+    coordinates.push([4, 14])
 
     expected = [[2,5],[87,2],[56,39],[3,46],[4, 14]]
     assert_equal expected, coordinates
   end
 
   def test_6
-    skip
     team = {
       pitchers: ["Kenny", "Joan", "Shabaz"],
       fielders: ["Luke", "Chris", "Megan", "Mark", "Mackenzie"],
@@ -64,13 +60,12 @@ class NestesdCollectionsTest < Minitest::Test
     }
     # Using the team variable defined above
     # retrieve all of the pitchers
-    pitchers = _________
+    pitchers = team[:pitchers]
     expected = ["Kenny", "Joan", "Shabaz"]
     assert_equal expected, pitchers
   end
 
   def test_7
-    skip
     team = {
       pitchers: ["Kenny", "Joan", "Shabaz"],
       fielders: ["Luke", "Chris", "Megan", "Mark", "Mackenzie"],
@@ -78,7 +73,7 @@ class NestesdCollectionsTest < Minitest::Test
     }
     # Using the team variable defined above
     # add "Phil" as a pitcher
-    __________
+    team[:pitchers].push("Phil")
 
     expected = {
       pitchers: ["Kenny", "Joan", "Shabaz", "Phil"],
@@ -89,7 +84,6 @@ class NestesdCollectionsTest < Minitest::Test
   end
 
   def test_8
-    skip
     team = {
       pitchers: ["Kenny", "Joan", "Shabaz"],
       fielders: ["Luke", "Chris", "Megan", "Mark", "Mackenzie"],
@@ -98,7 +92,7 @@ class NestesdCollectionsTest < Minitest::Test
     # Using the team variable defined above
     # create a new key :coaches with the value
     # of an empty array
-    _________
+    team[:coaches] = []
 
     expected = {
       pitchers: ["Kenny", "Joan", "Shabaz"],
@@ -110,7 +104,6 @@ class NestesdCollectionsTest < Minitest::Test
   end
 
   def test_9
-    skip
     team = {
       pitchers: ["Kenny", "Joan", "Shabaz"],
       fielders: ["Luke", "Chris", "Megan", "Mark", "Mackenzie"],
@@ -118,12 +111,11 @@ class NestesdCollectionsTest < Minitest::Test
     }
     # Using the team variable defined above
     # Find out how many fielders there are
-    num_fielders = ________
+    num_fielders = team[:fielders].length
     assert_equal 5, num_fielders
   end
 
   def test_10
-    skip
     team = {
       pitchers: ["Kenny", "Joan", "Shabaz"],
       fielders: ["Luke", "Chris", "Megan", "Mark", "Mackenzie"],
@@ -131,7 +123,7 @@ class NestesdCollectionsTest < Minitest::Test
     }
     # Using the team variable defined above
     # Find out if "Kenny" is a pitcher
-    kenny_is_pitcher = ________
+    kenny_is_pitcher = team[:pitchers].include?("Kenny")
     assert_equal true, kenny_is_pitcher
   end
 

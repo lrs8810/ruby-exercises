@@ -17,7 +17,7 @@ class FindTest < Minitest::Test
     found = words.find do |word|
       word == "waldo"
     end
-    assert_equal nil, found
+    assert_nil found
   end
 
   def test_find_waldo
@@ -33,7 +33,7 @@ class FindTest < Minitest::Test
     found = words.find do |word|
       word.length == 3
     end
-    assert_equal nil, found
+    assert_nil found
   end
 
   def test_find_13
@@ -78,7 +78,7 @@ class FindTest < Minitest::Test
     numbers = [1, 8, 19, 21, 29, 31, 34]
     found = numbers.find do |number|
       number > 20
-    end 
+    end
     assert_equal 21, found
   end
 

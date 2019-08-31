@@ -1,7 +1,6 @@
 gem 'minitest'
 require 'minitest/autorun'
 require 'minitest/pride'
-require 'pry'
 
 class MapPatternTest < Minitest::Test
 
@@ -73,7 +72,6 @@ class MapPatternTest < Minitest::Test
     trimmed = []
     animals.each do |animal|
       trimmed << animal.chop
-      binding.pry
     end
     assert_equal ["do", "ca", "mous", "fro", "platypu"], trimmed
   end

@@ -66,7 +66,7 @@ class SortByPatternTest < Minitest::Test
     prices = [3.02, 9.91, 17.9, 10.01, 11.0]
     transformed = []
     prices.each do |price|
-      transformed << [price % 1, price]
+      transformed << [10 - price, price]
     end
     binding.pry
     transformed = transformed.sort

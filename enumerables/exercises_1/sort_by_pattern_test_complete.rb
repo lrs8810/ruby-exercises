@@ -62,13 +62,12 @@ class SortByPatternTest < Minitest::Test
   end
 
   def test_sort_by_proximity_to_ten
-    skip
     prices = [3.02, 9.91, 17.9, 10.01, 11.0]
     transformed = []
     prices.each do |price|
-      transformed << [10 - price, price]
+      transformed << [(10 - price).abs, price]
     end
-    binding.pry
+    # binding.pry
     transformed = transformed.sort
     sorted = []
     transformed.each do |sort_key, price|

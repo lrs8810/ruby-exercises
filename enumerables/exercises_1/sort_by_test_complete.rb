@@ -37,10 +37,9 @@ class SortByTest < Minitest::Test
   end
 
   def test_sort_by_proximity_to_ten
-    skip
     prices = [3.02, 9.91, 17.9, 10.01, 11.0]
     sorted = prices.sort_by do |price|
-      price
+      (10 - price).abs
     end
     assert_equal [10.01, 9.91, 11.0, 3.02, 17.9], sorted
   end
